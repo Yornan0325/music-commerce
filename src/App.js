@@ -1,33 +1,29 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { useState } from 'react';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import PrivateRoute from "./AccessSystem/RestrictAccess/PrivateRoute";
+import Home from "./Components/Home/Home";
+// import SignInForm from "./Components/UserRegister/SignInForm";
+import SignIn from "./AccessSystem/UserLogin/SignIn";
+import SignUp from "./AccessSystem/UserRegister/SignUp";
+import { useContext } from "./ContextApp/UseContext";
+import { ProvidersApp} from "./ContextApp/UseContext";
+ 
 
-import modules from './Components/Modules';
-
-function App() {
-  const [currentTab, setCurrentTab] = useState('dashboard');
-  return (
-    <div className="App">
-     <Router>
-        <div className="App">
-          <header className="App-header">
-            <ul className="App-nav">
-              {modules.map(module => ( 
-                  <li key={module.name} className={currentTab === module.name ? 'active' : ''}>
-                    <Link to={module.routeProps.path} onClick={() => setCurrentTab(module.name)}>{module.name}</Link>
-                  </li>
-              ))}
-            </ul>
-          </header>
-          <div className="App-content">
-            {modules.map(module => (
-              <Route {...module.routeProps} key={module.name} />
-            ))}
-          </div>
-        </div>
-      </Router>
-    </div>
-  );
-}
+  function App() {
+    const { userLogin } = useContext();
+    return (
+      <div className="App">
+        <ProvidersApp>
+          <BrowserRouter>
+            <Switch>
+              <PrivateRoute exact path="/" component={Home} />
+              <Route exact path="/login" component={SignIn} />
+              <Route exact path="/signup" component={SignUp} />
+            </Switch>
+          </BrowserRouter>
+        </ProvidersApp>
+      </div>
+    );
+  }
 
 export default App;
