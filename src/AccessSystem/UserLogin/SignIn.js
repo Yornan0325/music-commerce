@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 
 const SignIn = () => {
   let history = useHistory();
-  const { userLogin } = useContext();
+  const { registeredUser } = useContext();
   const firebaseInstance = getFirebase();
   const email = useInput("");
   const password = useInput("");
@@ -28,7 +28,7 @@ const SignIn = () => {
     }
   };
 
-  if (userLogin) {
+  if (registeredUser) {
     return <Redirect to="/" />;
   }
 
@@ -40,7 +40,7 @@ const SignIn = () => {
             <div className="columns">
               <div className="column  is-6 is-offset-3">
                 <p className="title  has-text-white is-size-3">Inicia sesion</p>
-                <h1 className="title">{userLogin}</h1>
+                <h1 className="title">{registeredUser}</h1>
                 <div className="box">
                   <form onSubmit={hanleSignIn}>
                     <div className="field">

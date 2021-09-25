@@ -29,7 +29,7 @@ const useContextApp = () => {
         if (authUser) {
             setRegisteredUser(authUser.email);
         } else {
-            setRegisteredUser("El usuario no se encuentra en la base de datos");
+            setRegisteredUser(null);
         }
       });
     }
