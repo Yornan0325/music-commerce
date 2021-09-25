@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { useState } from 'react';
 
-import modules from './Modules';
+import modules from './Components/Modules';
 
 function App() {
   const [currentTab, setCurrentTab] = useState('dashboard');
