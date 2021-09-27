@@ -6,8 +6,8 @@ const Games = () => (
 
 export default {
     routeProps: {
-        path: '/games',
+        path: '/musica',
         component: Games,
     },
-    name: 'Games',
+    name: 'Musica',
 };

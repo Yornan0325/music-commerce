@@ -15,8 +15,7 @@ const Dashboard = () => (
 
 export default {
     routeProps: {
-        path: '/',
-        exact: true,
+        path: '/dashboard',
         component: Dashboard,
     },
     name: 'Dashboard',
