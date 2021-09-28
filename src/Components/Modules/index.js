@@ -1,9 +1,10 @@
  
-import Dashboard from './Dashboard';
-import Games from './Games';
- 
+import SocialMedia from './SocialMedia';
+import Music from './Music.js';
+ import Ecommerce from './E-Commerce'
 
 export default [
-    Dashboard,
-    Games,
+    SocialMedia,
+    Music,
+    Ecommerce
 ];

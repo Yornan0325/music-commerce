@@ -1,13 +1,17 @@
 import React from 'react';
 
-const Dashboard = () => (
+const Music = () => (
     <section class="section">
     <div class="container">
       <h1 class="title">
-        Hello World
+       Trabajando....
       </h1>
       <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
+        En construccion
+        
+      </p>
+      <p class="subtitle">
+        Musica
       </p>
     </div>
   </section>
@@ -15,8 +19,9 @@ const Dashboard = () => (
 
 export default {
     routeProps: {
-        path: '/dashboard',
-        component: Dashboard,
+        path: '/musica',
+        component: Music,
     },
-    name: 'Dashboard',
+    name: 'Musica',
+    icons:'fa fa-music'
 };
