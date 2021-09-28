@@ -5,11 +5,9 @@ import modules from '../Modules';
 const Paths = () => {
     return (
         <>
-            <div className="App-content">
-                {modules.map(module => (
-                    <Route {...module.routeProps} key={module.name} />
-                ))}
-            </div>
+            {modules.map(module => (
+                <Route {...module.routeProps} key={module.name} />
+            ))}
         </>
     );
 };
