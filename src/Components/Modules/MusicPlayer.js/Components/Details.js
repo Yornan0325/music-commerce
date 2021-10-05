@@ -1,13 +1,13 @@
 import React from 'react'
 
-const  Details = () => {
+const  Details = (props) => {
     return (
         <div className="detaisl">
             <div className="details__img">
-                <img src ="" alt="" /> 
+                <img src ={props.song.img_src} alt="" /> 
             </div>
-            <h3 className="details__title">Song title</h3>
-            <h3 className="details__artist">Song artist</h3>
+            <h3 className="details__title">{props.song.title}</h3>
+            <h3 className="details__artist">{props.song.artist}</h3>
         </div>
     )
 }
