@@ -11,7 +11,7 @@ import Paths from './Components/Home/Paths';
 function App() {
   const { userLogin } = useContext();
   return (
-    <div className="App">
+    // <div className="App">
       <ProvidersApp>
         <Router>
           <PrivateRoute exact path="/" component={Home} />
@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
         </Router>
       </ProvidersApp>
-    </div>
+    // </div>
   );
 }
 
