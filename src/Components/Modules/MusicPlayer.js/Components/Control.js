@@ -1,7 +1,7 @@
+import React from 'react'
 import { faBackward, faForward, faPause, faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
-
+import '../../../../App.css'
 const Control = (props) => {
     return (
 

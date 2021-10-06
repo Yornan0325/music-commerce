@@ -1,8 +1,8 @@
 import React from 'react'
-
+import "../../../../App.css"
 const  Details = (props) => {
     return (
-        <div className="detaisl">
+        <div className="details">
             <div className="details__img">
                 <img src ={props.song.img_src} alt="" /> 
             </div>

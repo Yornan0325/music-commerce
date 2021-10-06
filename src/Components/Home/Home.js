@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import modules from '../Modules';
 import SignOut from "../../AccessSystem/UserExit/SignOut";
+import { useContext } from "../../ContextApp/UseContext"
+import Loading from "../../AccessSystem/Loader/Loading";
 const Home = () => {
+    const { registeredUser } = useContext();
     const [isActive, setisActive] = React.useState(false);
     const [messageSignOut, setMessageSignOut] = React.useState(false)
     const toggle = () => setisActive(!isActive);
+
     console.log("hola", messageSignOut)
     return (
         <>
@@ -73,22 +77,24 @@ const Home = () => {
             <div style={{ margin: "12px" }}>
                 <div class="columns">
 
-                    {modules.map(module => (
-
-                        <Link to={module.routeProps.path} key={module.name}>
-                            <div class="column is-narrow ">
-                                <div class="box" style={{ width: "200px" }}>
-                                    <span class="icon-text">
-                                        <span class="icon">
-                                            <i className={module.icons}></i>
+                    {
+                        modules.map(module => (
+                            <Link to={module.routeProps.path} key={module.name}>
+                                <div class="column is-narrow ">
+                                    <div class="box" style={{ width: "200px" }}>
+                                        <span class="icon-text">
+                                            <span class="icon">
+                                                <i className={module.icons}></i>
+                                            </span>
+                                            <span>{module.name}</span>
                                         </span>
-                                        <span>{module.name}</span>
-                                    </span>
 
+                                    </div>
                                 </div>
-                            </div>
-                        </Link>
-                    ))}
+                            </Link>
+                        ))
+                    }
+
                 </div>
             </div>
 
