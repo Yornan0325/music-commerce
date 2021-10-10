@@ -2,15 +2,15 @@ import React from "react";
 import getFirebase from "../../FirebaseApp/FirebaseSettings";
 // import { Link } from "react-router-dom";
 
- 
-const SignOut = () => {
-  const firebaseInstance = getFirebase();
 
+const SignOut = ({setMessageSignOut}) => {
+  const firebaseInstance = getFirebase();
   const hanleSignOut = async () => {
     try {
       if (firebaseInstance) {
         await firebaseInstance.auth().signOut();
-        alert("Successfully signed out!");
+        // alert("Successfully signed out!");
+        setMessageSignOut(true)
       }
     } catch (error) {
       console.log("error", error);
@@ -19,7 +19,7 @@ const SignOut = () => {
 
   return (
     <>
-       <button className="button is-dark" onClick={hanleSignOut}>Sign Out</button>
+      <a onClick={hanleSignOut}>Salir</a>
     </>
   );
 };
